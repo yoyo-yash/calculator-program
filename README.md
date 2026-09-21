@@ -1,4 +1,4 @@
-# calculator
+# calculator-program
 calculator program in java
 
 concepts used-
