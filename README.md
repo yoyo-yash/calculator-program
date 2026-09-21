@@ -1,5 +1,6 @@
 # calculator-program
 calculator program in java
+operators used are +, -, *, /, ^
 
 concepts used-
 1) scanner
