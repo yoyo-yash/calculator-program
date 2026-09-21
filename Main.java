@@ -14,6 +14,7 @@ class Main {
         double num2;
         char operator;
         double result = 0;
+        boolean ValidOperation = true;
 
         // prompt for user input
         System.out.print("Enter the first number: ");
@@ -37,16 +38,32 @@ class Main {
             case '*' : result = num1 * num2;
             break;
             
-            case '/' : result = num1 / num2;
+            case '/' : {
+                if(num2 == 0){
+                    System.out.println("ERROR! Cannot divide by zero."); // divide by 0 exception
+                    ValidOperation = false;
+                }
+                else{
+                    result = num1 / num2;
+                }
+            }
             break;
             
             case '^' : result = Math.pow(num1, num2);
             break;
 
+            default : System.out.println("Please choose a valid operator."); // enetering an invalid operator exceptions
+            ValidOperation = false;
+
          }
 
         // result
-         System.out.printf("%.1f %c %.1f is %.2f", num1, operator, num2, result);
+         if(ValidOperation){
+            System.out.printf("%.1f %c %.1f is %.1f", num1, operator, num2, result);
+         }
+         else{
+
+         }
 
         scanner.close(); // close scanner
 
